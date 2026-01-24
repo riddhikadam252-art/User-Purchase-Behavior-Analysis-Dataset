@@ -34,9 +34,9 @@ df = pd.DataFrame({
 })
 
 # -------- PREDICT --------
-    if st.button("Predict Purchase Amount"):
-        for col in encoders:
-            df[col] = encoders[col].transform(df[col]) 
+if st.button("Predict Purchase Amount"):
+    for col in encoders:
+        df[col] = encoders[col].transform(df[col])
         prediction = model.predict(df) 
         st.success(f"Predicted Purchase Amount: {prediction[0]:,.2f}")  
         result = "High Purchase" if prediction[0] > 500 else "Low Purchase" st.success(f"Result: {result}")
