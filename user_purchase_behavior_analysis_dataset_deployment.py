@@ -30,7 +30,7 @@ df = pd.DataFrame({
     "Gender": [gender],
     "Country": [country],
     "Product Category": [product_category],
-    "Purchase Date": [purchase date]
+    "Purchase Date": [purchase date],
 })
 
 # -------- PREDICT --------
