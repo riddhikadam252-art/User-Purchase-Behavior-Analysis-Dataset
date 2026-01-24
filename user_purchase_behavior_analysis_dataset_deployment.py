@@ -20,16 +20,16 @@ age = st.number_input("Age", 18, 65,25)
 
 gender = st.selectbox("Gender", encoders["Gender"].classes_)
 country = st.selectbox("Country", encoders["Country"].classes_)
-product category = st.selectbox("Product Category", encoders["Product Category"].classes_)
+product_category = st.selectbox("Product Category", encoders["Product Category"].classes_)
 
-Purchase Date = st.number_input("Purchase Date", 0.0, 40.0, 2.0)
+purchase_date = st.number_input("Purchase Date", 0.0, 40.0, 2.0)
 
 # -------- CREATE DATAFRAME --------
 df = pd.DataFrame({
     "Age": [age],
     "Gender": [gender],
     "Country": [country],
-    "Product Category": [product category],
+    "Product Category": [product_category],
     "Purchase Date": [purchase date]
 })
 
