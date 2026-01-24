@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("User_Purchase_Behavior_Analysis_Dataset_model(1).pkl")
+model = joblib.load("User_Purchase_Behavior_Analysis_Dataset_model (1).zip")
 encoders = joblib.load("label_encoders_sp.pkl")
 
 st.title("User Purchase Behavior Analysis Dataset App")
