@@ -33,11 +33,17 @@ df = pd.DataFrame({
     "Purchase Date": [purchase_date],
 })
 
-# -------- PREDICT --------
+#----------PREDICT----------
 if st.button("Predict Purchase Amount"):
-    for col in encoders:
+
+    categorical_cols = ["Gender", "Country", "Product Category"]
+
+    for col in categorical_cols:
         df[col] = encoders[col].transform(df[col])
-        prediction = model.predict(df) 
-        st.success(f"Predicted Purchase Amount: {prediction[0]:,.2f}")  
-        result = "High Purchase" if prediction[0] > 500 else "Low Purchase" 
-        st.success(f"Result: {result}")
+
+    prediction = model.predict(df)
+
+    st.success(f"Predicted Purchase Amount: {prediction[0]:,.2f}")
+
+    result = "High Purchase" if prediction[0] > 500 else "Low Purchase"
+    st.success(f"Result: {result}")
